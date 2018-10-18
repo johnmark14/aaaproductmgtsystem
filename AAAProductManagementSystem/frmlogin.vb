@@ -39,7 +39,6 @@ Public Class frmlogin
 
     Private Sub frmlogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbemployee_Add()
-        cbemployee.SelectedIndex = 0
     End Sub
 
     Private Sub btncancel_Click(sender As Object, e As EventArgs) Handles btncancel.Click
@@ -57,12 +56,15 @@ Public Class frmlogin
         End If
     End Sub
 
-    Private Sub cbemployee_Add()
+    Public Sub cbemployee_Add()
         Try
             myDBConnect.openConnect()
             Dim sqlString As String = "SELECT names FROM tblemployees"
             Dim sqlCmd As New MySqlCommand(sqlString, myDBConnect.mySqlConString)
             Dim sqlReader As MySqlDataReader = sqlCmd.ExecuteReader
+            cbemployee.Items.Clear()
+            cbemployee.Items.Add("---Select---")
+            cbemployee.SelectedIndex = 0
             While (sqlReader.Read())
                 cbemployee.Items.Add(sqlReader("names"))
             End While

@@ -19,7 +19,8 @@ Public Class frmmain
     Private Sub frmmain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         frmlogin.Show()
         frmlogin.txtpassword.Clear()
-        frmlogin.cbemployee.SelectedIndex = 0
+        frmlogin.cbemployee_Add()
+        Timer1.Stop()
     End Sub
 
     Public Sub fillListview()
@@ -48,6 +49,7 @@ Public Class frmmain
 
     Private Sub frmmain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fillListview()
+        Timer1.Start()
     End Sub
 
     Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtsearch.TextChanged
@@ -92,5 +94,10 @@ Public Class frmmain
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         btnload.Focus()
         btnload.PerformClick()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        lbltime.Text = TimeOfDay.ToString("h:mm:ss tt")
+        lbldate.Text = Date.Now.Date
     End Sub
 End Class

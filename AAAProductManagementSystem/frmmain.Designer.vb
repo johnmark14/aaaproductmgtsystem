@@ -22,6 +22,7 @@ Partial Class frmmain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmmain))
         Me.btndeliveries = New System.Windows.Forms.Button()
         Me.btnload = New System.Windows.Forms.Button()
@@ -39,7 +40,7 @@ Partial Class frmmain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.stsystem = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lbltime = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -51,6 +52,8 @@ Partial Class frmmain
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.lbldate = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsystem.SuspendLayout()
@@ -250,16 +253,15 @@ Partial Class frmmain
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(140, 17)
         Me.ToolStripStatusLabel1.Text = "Amber and Ambrose Ent."
         '
-        'Label4
+        'lbltime
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(890, 29)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(172, 42)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "12:00:00"
+        Me.lbltime.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbltime.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltime.Location = New System.Drawing.Point(854, 29)
+        Me.lbltime.Name = "lbltime"
+        Me.lbltime.Size = New System.Drawing.Size(249, 42)
+        Me.lbltime.TabIndex = 7
+        Me.lbltime.Text = "12:00:00"
         '
         'PictureBox1
         '
@@ -391,17 +393,32 @@ Partial Class frmmain
         Me.PictureBox6.TabIndex = 14
         Me.PictureBox6.TabStop = False
         '
+        'Timer1
+        '
+        '
+        'lbldate
+        '
+        Me.lbldate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbldate.AutoSize = True
+        Me.lbldate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbldate.Location = New System.Drawing.Point(858, 9)
+        Me.lbldate.Name = "lbldate"
+        Me.lbldate.Size = New System.Drawing.Size(94, 16)
+        Me.lbldate.TabIndex = 11
+        Me.lbldate.Text = "YYYY/MM/DD"
+        '
         'frmmain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.ClientSize = New System.Drawing.Size(1115, 570)
+        Me.Controls.Add(Me.lbldate)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lbltime)
         Me.Controls.Add(Me.stsystem)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -443,7 +460,7 @@ Partial Class frmmain
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents stsystem As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lbltime As Label
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents PictureBox1 As PictureBox
@@ -459,4 +476,6 @@ Partial Class frmmain
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label6 As Label
     Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents lbldate As Label
 End Class
