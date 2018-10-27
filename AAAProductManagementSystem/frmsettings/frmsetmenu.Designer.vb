@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmsetmenu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmsetmenu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmsetmenu))
         Me.ststatus = New System.Windows.Forms.StatusStrip()
@@ -82,9 +82,9 @@ Partial Class frmsetmenu
         Me.btnaddproducts.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnaddproducts.ForeColor = System.Drawing.Color.White
         Me.btnaddproducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnaddproducts.Location = New System.Drawing.Point(216, 36)
+        Me.btnaddproducts.Location = New System.Drawing.Point(215, 36)
         Me.btnaddproducts.Name = "btnaddproducts"
-        Me.btnaddproducts.Size = New System.Drawing.Size(157, 47)
+        Me.btnaddproducts.Size = New System.Drawing.Size(157, 43)
         Me.btnaddproducts.TabIndex = 5
         Me.btnaddproducts.Text = "| Add Products"
         Me.btnaddproducts.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -107,9 +107,9 @@ Partial Class frmsetmenu
         Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(223, 40)
+        Me.PictureBox2.Location = New System.Drawing.Point(222, 40)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox2.Size = New System.Drawing.Size(40, 36)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 7
         Me.PictureBox2.TabStop = False

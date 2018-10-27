@@ -1,17 +1,25 @@
 ﻿Public Class frmsetmenu
-    Private Sub btnaddemployee_MouseHover(sender As Object, e As EventArgs) Handles btnaddemployee.MouseHover
+    Private Sub PictureBox1_MouseHover(sender As Object, e As EventArgs) Handles PictureBox1.MouseHover
         stlabel.Text = "Add New Employee, Edit Employees information"
     End Sub
 
-    Private Sub btnaddemployee_MouseLeave(sender As Object, e As EventArgs) Handles btnaddemployee.MouseLeave
+    Private Sub PictureBox1_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox1.MouseLeave
         stlabel.Text = "Amber and Ambrose Ent."
     End Sub
 
-    Private Sub btnaddproducts_MouseHover(sender As Object, e As EventArgs) Handles btnaddproducts.MouseHover
+    Private Sub PictureBox2_MouseHover(sender As Object, e As EventArgs) Handles PictureBox2.MouseHover
         stlabel.Text = "Add New Products, Edit Products Information"
     End Sub
 
-    Private Sub btnaddproducts_MouseLeave(sender As Object, e As EventArgs) Handles btnaddproducts.MouseLeave
+    Private Sub PictureBox2_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox2.MouseLeave
+        stlabel.Text = "Amber and Ambrose Ent."
+    End Sub
+
+    Private Sub PictureBox3_MouseHover(sender As Object, e As EventArgs)
+        stlabel.Text = "Add Roles to Employees"
+    End Sub
+
+    Private Sub PictureBox3_MouseLeave(sender As Object, e As EventArgs)
         stlabel.Text = "Amber and Ambrose Ent."
     End Sub
 
@@ -36,5 +44,6 @@
         btnaddemployee.Focus()
         btnaddemployee.PerformClick()
     End Sub
+
 
 End Class

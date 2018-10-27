@@ -6,6 +6,7 @@ Public Class frmdeliveries
     Private Sub frmdeliveries_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btncancel.PerformClick()
         lblcount.Text = 0
+        cbdelivery.SelectedIndex = 0
     End Sub
 
     Private Sub btncancel_Click(sender As Object, e As EventArgs) Handles btncancel.Click
@@ -85,23 +86,69 @@ Public Class frmdeliveries
 
     Private Sub btnadd_Click(sender As Object, e As EventArgs) Handles btnadd.Click
         If cbdelivery.SelectedIndex >= 0 And txtqty.Text <> 0 Then
-            lvproductsinfo.Enabled = True
-            With lvproductsinfo.Items.Add(lblcode.Text)
-                .SubItems.Add(lblproduct.Text)
-                .SubItems.Add(lblprice.Text)
-                .SubItems.Add(txtqty.Text)
-                .SubItems.Add(cbdelivery.SelectedItem.ToString)
-            End With
-            lblcount.Text = lvproductsinfo.Items.Count
-            isEdit = False
-            btncancel.PerformClick()
+            'lvproductsinfo.Enabled = True
+            'With lvproductsinfo.Items.Add(lblcode.Text)
+            '    .SubItems.Add(lblproduct.Text)
+            '    .SubItems.Add(lblprice.Text)
+            '    .SubItems.Add(txtqty.Text)
+            '    .SubItems.Add(cbdelivery.SelectedItem.ToString)
+            'End With
+            'lblcount.Text = lvproductsinfo.Items.Count
+            'isEdit = False
+            'btncancel.PerformClick()
+
+            If lvproductsinfo.Items.Count <> 0 Then
+                lvproductsinfo.Enabled = True
+
+                Dim item As ListViewItem
+
+                item = lvproductsinfo.FindItemWithText(lblcode.Text, True, 0)
+
+                If Not item Is Nothing Then
+                    Dim n_qty As Integer
+                    Dim d_qty As Integer
+
+                    Integer.TryParse(txtqty.Text, n_qty)
+                    Integer.TryParse(lvproductsinfo.Items(item.Index).SubItems(3).Text, d_qty)
+
+                    lvproductsinfo.Items(item.Index).SubItems(3).Text = n_qty + d_qty
+
+                    lblcount.Text = lvproductsinfo.Items.Count
+                    isEdit = False
+                    btncancel.PerformClick()
+                Else
+                    lvproductsinfo.Enabled = True
+                    With lvproductsinfo.Items.Add(lblcode.Text)
+                        .SubItems.Add(lblproduct.Text)
+                        .SubItems.Add(lblprice.Text)
+                        .SubItems.Add(txtqty.Text)
+                        .SubItems.Add(cbdelivery.SelectedItem.ToString)
+                    End With
+                    lblcount.Text = lvproductsinfo.Items.Count
+                    isEdit = False
+                    btncancel.PerformClick()
+                End If
+            Else
+                lvproductsinfo.Enabled = True
+                With lvproductsinfo.Items.Add(lblcode.Text)
+                    .SubItems.Add(lblproduct.Text)
+                    .SubItems.Add(lblprice.Text)
+                    .SubItems.Add(txtqty.Text)
+                    .SubItems.Add(cbdelivery.SelectedItem.ToString)
+                End With
+                lblcount.Text = lvproductsinfo.Items.Count
+                isEdit = False
+                btncancel.PerformClick()
+            End If
 
         Else
             MessageBox.Show("Add delivery details", Name, MessageBoxButtons.OK, MessageBoxIcon.Information)
             If cbdelivery.SelectedIndex < 0 Then
                 cbdelivery.Focus()
+                txtcode.Clear()
             Else
                 txtqty.Focus()
+                txtcode.Clear()
             End If
         End If
     End Sub
@@ -141,4 +188,5 @@ Public Class frmdeliveries
     Private Sub frmdeliveries_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         frmmain.fillListview()
     End Sub
+
 End Class

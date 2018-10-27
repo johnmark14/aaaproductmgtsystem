@@ -45,15 +45,16 @@ Partial Class frmmain
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.lvoutStocks = New System.Windows.Forms.ListView()
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbloutcount = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.lbldate = New System.Windows.Forms.Label()
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsystem.SuspendLayout()
@@ -311,25 +312,25 @@ Partial Class frmmain
         Me.PictureBox4.TabIndex = 10
         Me.PictureBox4.TabStop = False
         '
-        'ListView2
+        'lvoutStocks
         '
-        Me.ListView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.lvoutStocks.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader4})
-        Me.ListView2.GridLines = True
-        Me.ListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.ListView2.Location = New System.Drawing.Point(19, 84)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(217, 323)
-        Me.ListView2.TabIndex = 3
-        Me.ListView2.UseCompatibleStateImageBehavior = False
-        Me.ListView2.View = System.Windows.Forms.View.Details
+        Me.lvoutStocks.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader4, Me.ColumnHeader6})
+        Me.lvoutStocks.GridLines = True
+        Me.lvoutStocks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.lvoutStocks.Location = New System.Drawing.Point(19, 84)
+        Me.lvoutStocks.Name = "lvoutStocks"
+        Me.lvoutStocks.Size = New System.Drawing.Size(217, 323)
+        Me.lvoutStocks.TabIndex = 3
+        Me.lvoutStocks.UseCompatibleStateImageBehavior = False
+        Me.lvoutStocks.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "Product Name"
-        Me.ColumnHeader4.Width = 217
+        Me.ColumnHeader4.Text = "Product Code"
+        Me.ColumnHeader4.Width = 100
         '
         'Label2
         '
@@ -341,15 +342,15 @@ Partial Class frmmain
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Items"
         '
-        'Label3
+        'lbloutcount
         '
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(190, 50)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(46, 16)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "#"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lbloutcount.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbloutcount.Location = New System.Drawing.Point(190, 50)
+        Me.lbloutcount.Name = "lbloutcount"
+        Me.lbloutcount.Size = New System.Drawing.Size(46, 16)
+        Me.lbloutcount.TabIndex = 7
+        Me.lbloutcount.Text = "#"
+        Me.lbloutcount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'GroupBox2
         '
@@ -357,9 +358,9 @@ Partial Class frmmain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.PictureBox6)
-        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.lbloutcount)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.ListView2)
+        Me.GroupBox2.Controls.Add(Me.lvoutStocks)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(854, 92)
         Me.GroupBox2.MaximumSize = New System.Drawing.Size(0, 650)
@@ -406,6 +407,11 @@ Partial Class frmmain
         Me.lbldate.Size = New System.Drawing.Size(94, 16)
         Me.lbldate.TabIndex = 11
         Me.lbldate.Text = "YYYY/MM/DD"
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Product Name"
+        Me.ColumnHeader6.Width = 110
         '
         'frmmain
         '
@@ -469,13 +475,14 @@ Partial Class frmmain
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents ListView2 As ListView
+    Friend WithEvents lvoutStocks As ListView
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lbloutcount As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label6 As Label
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents lbldate As Label
+    Friend WithEvents ColumnHeader6 As ColumnHeader
 End Class

@@ -18,7 +18,7 @@ Public Class frmmain
 
     Private Sub frmmain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         frmlogin.Show()
-        frmlogin.txtpassword.Clear()
+        frmlogin.btncancel.PerformClick()
         frmlogin.cbemployee_Add()
         Timer1.Stop()
     End Sub
@@ -26,7 +26,7 @@ Public Class frmmain
     Public Sub fillListview()
         Try
             myDBConnect.openConnect()
-            Dim sqlstring As String = "SELECT * FROM tblproducts"
+            Dim sqlstring As String = "SELECT * FROM tblproducts WHERE stocks != '0'"
             Dim sqlCmd As New MySqlCommand(sqlstring, myDBConnect.mySqlConString)
             Dim sqlReader As MySqlDataReader = sqlCmd.ExecuteReader
             lvproductinfo.Items.Clear()
@@ -43,6 +43,30 @@ Public Class frmmain
             MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             myDBConnect.closeConnect()
+            fillListview_OutofStocks()
+            GC.Collect()
+        End Try
+    End Sub
+
+    Public Sub fillListview_OutofStocks()
+        Try
+            myDBConnect.openConnect()
+            Dim sqlstring As String = "SELECT * FROM tblproducts WHERE stocks = '0'"
+            Dim sqlCmd As New MySqlCommand(sqlstring, myDBConnect.mySqlConString)
+            Dim sqlReader As MySqlDataReader = sqlCmd.ExecuteReader
+            lvoutStocks.Items.Clear()
+            While (sqlReader.Read())
+                With lvoutStocks.Items.Add(sqlReader("id"))
+                    .subitems.add(sqlReader("sku"))
+                End With
+            End While
+            sqlCmd.Dispose()
+            sqlReader.Dispose()
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            myDBConnect.closeConnect()
+            lbloutcount.Text = lvoutStocks.Items.Count
             GC.Collect()
         End Try
     End Sub

@@ -73,16 +73,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmloadio\frmloadin.Designer.vb">
-      <DependentUpon>frmloadin.vb</DependentUpon>
+    <Compile Include="frmdeliveries\frmloadingFlash.Designer.vb">
+      <DependentUpon>frmloadingFlash.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmloadio\frmloadin.vb">
+    <Compile Include="frmdeliveries\frmloadingFlash.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmsettings\frmaddemployees.Designer.vb">
+    <Compile Include="frmloadio\loadin\frmloadin.Designer.vb">
+      <DependentUpon>frmloadin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmloadio\loadin\frmloadin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmloadio\loadin\frmloadinEditDialog.Designer.vb">
+      <DependentUpon>frmloadinEditDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmloadio\loadin\frmloadinEditDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsettings\addemployees\frmaddemployees.Designer.vb">
       <DependentUpon>frmaddemployees.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmsettings\frmaddemployees.vb">
+    <Compile Include="frmsettings\addemployees\frmaddemployees.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsettings\addemployees\frmupdateadmincredentials.Designer.vb">
+      <DependentUpon>frmupdateadmincredentials.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmsettings\addemployees\frmupdateadmincredentials.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmsettings\frmaddproducts.Designer.vb">
@@ -122,6 +140,12 @@
     <Compile Include="frmdeliveries\frmrcvby.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmsettings\addemployees\frmadmincredentials.Designer.vb">
+      <DependentUpon>frmadmincredentials.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmsettings\addemployees\frmadmincredentials.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmsettings\frmsetmenu.Designer.vb">
       <DependentUpon>frmsetmenu.vb</DependentUpon>
     </Compile>
@@ -146,11 +170,20 @@
     <Compile Include="resources\class\Dbconnect.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmloadio\frmloadin.resx">
+    <EmbeddedResource Include="frmdeliveries\frmloadingFlash.resx">
+      <DependentUpon>frmloadingFlash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmloadio\loadin\frmloadin.resx">
       <DependentUpon>frmloadin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmsettings\frmaddemployees.resx">
+    <EmbeddedResource Include="frmloadio\loadin\frmloadinEditDialog.resx">
+      <DependentUpon>frmloadinEditDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsettings\addemployees\frmaddemployees.resx">
       <DependentUpon>frmaddemployees.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsettings\addemployees\frmupdateadmincredentials.resx">
+      <DependentUpon>frmupdateadmincredentials.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmsettings\frmaddproducts.resx">
       <DependentUpon>frmaddproducts.vb</DependentUpon>
@@ -169,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmdeliveries\frmrcvby.resx">
       <DependentUpon>frmrcvby.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsettings\addemployees\frmadmincredentials.resx">
+      <DependentUpon>frmadmincredentials.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmsettings\frmsetmenu.resx">
       <DependentUpon>frmsetmenu.vb</DependentUpon>
@@ -191,6 +227,35 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

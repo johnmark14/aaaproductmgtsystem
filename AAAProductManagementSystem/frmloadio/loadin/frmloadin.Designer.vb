@@ -22,21 +22,24 @@ Partial Class frmloadin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmloadin))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.cbsalesman = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblstocks = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lbltotalprice = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.lblprice = New System.Windows.Forms.Label()
         Me.lblproduct = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblcode = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lbltotalprice = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtqty = New System.Windows.Forms.TextBox()
@@ -48,21 +51,24 @@ Partial Class frmloadin
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btncancel = New System.Windows.Forms.Button()
         Me.btnadd = New System.Windows.Forms.Button()
         Me.lblsalesman = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.lbltnproduct = New System.Windows.Forms.Label()
+        Me.label13 = New System.Windows.Forms.Label()
+        Me.lbltotalNumberOfProducts = New System.Windows.Forms.Label()
         Me.lbltotalamount = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.btnvalidate = New System.Windows.Forms.Button()
+        Me.psave = New System.Windows.Forms.PictureBox()
+        Me.splash = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.psave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -76,16 +82,15 @@ Partial Class frmloadin
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'PictureBox5
+        'cbsalesman
         '
-        Me.PictureBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PictureBox5.Location = New System.Drawing.Point(1, 6)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(536, 33)
-        Me.PictureBox5.TabIndex = 12
-        Me.PictureBox5.TabStop = False
+        Me.cbsalesman.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbsalesman.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbsalesman.FormattingEnabled = True
+        Me.cbsalesman.Location = New System.Drawing.Point(64, 56)
+        Me.cbsalesman.Name = "cbsalesman"
+        Me.cbsalesman.Size = New System.Drawing.Size(378, 34)
+        Me.cbsalesman.TabIndex = 0
         '
         'Label5
         '
@@ -100,18 +105,21 @@ Partial Class frmloadin
         Me.Label5.TabIndex = 14
         Me.Label5.Text = "Salesman"
         '
-        'cbsalesman
+        'PictureBox5
         '
-        Me.cbsalesman.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbsalesman.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbsalesman.FormattingEnabled = True
-        Me.cbsalesman.Location = New System.Drawing.Point(64, 56)
-        Me.cbsalesman.Name = "cbsalesman"
-        Me.cbsalesman.Size = New System.Drawing.Size(378, 34)
-        Me.cbsalesman.TabIndex = 25
+        Me.PictureBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PictureBox5.Location = New System.Drawing.Point(1, 6)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(536, 33)
+        Me.PictureBox5.TabIndex = 12
+        Me.PictureBox5.TabStop = False
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.lblstocks)
+        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.lbltotalprice)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.lblprice)
@@ -124,33 +132,59 @@ Partial Class frmloadin
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
         Me.GroupBox2.Location = New System.Drawing.Point(13, 144)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(537, 255)
+        Me.GroupBox2.Size = New System.Drawing.Size(537, 289)
         Me.GroupBox2.TabIndex = 26
         Me.GroupBox2.TabStop = False
         '
-        'Label1
+        'lblstocks
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(199, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(113, 18)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Load Information"
+        Me.lblstocks.BackColor = System.Drawing.Color.White
+        Me.lblstocks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblstocks.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.lblstocks.Location = New System.Drawing.Point(187, 145)
+        Me.lblstocks.Name = "lblstocks"
+        Me.lblstocks.Size = New System.Drawing.Size(328, 43)
+        Me.lblstocks.TabIndex = 28
+        Me.lblstocks.Text = "Stocks Available"
+        Me.lblstocks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'PictureBox1
+        'Label11
         '
-        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PictureBox1.Location = New System.Drawing.Point(1, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(536, 33)
-        Me.PictureBox1.TabIndex = 12
-        Me.PictureBox1.TabStop = False
+        Me.Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label11.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(17, 145)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(170, 43)
+        Me.Label11.TabIndex = 27
+        Me.Label11.Text = "Stocks:"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbltotalprice
+        '
+        Me.lbltotalprice.BackColor = System.Drawing.Color.White
+        Me.lbltotalprice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lbltotalprice.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.lbltotalprice.Location = New System.Drawing.Point(187, 231)
+        Me.lbltotalprice.Name = "lbltotalprice"
+        Me.lbltotalprice.Size = New System.Drawing.Size(328, 43)
+        Me.lbltotalprice.TabIndex = 26
+        Me.lbltotalprice.Text = "Total Price"
+        Me.lbltotalprice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(17, 231)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(170, 43)
+        Me.Label4.TabIndex = 25
+        Me.Label4.Text = "Total Price:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblprice
         '
@@ -227,36 +261,35 @@ Partial Class frmloadin
         Me.Label2.Text = "Product:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'lbltotalprice
+        'Label1
         '
-        Me.lbltotalprice.BackColor = System.Drawing.Color.White
-        Me.lbltotalprice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbltotalprice.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.lbltotalprice.Location = New System.Drawing.Point(187, 145)
-        Me.lbltotalprice.Name = "lbltotalprice"
-        Me.lbltotalprice.Size = New System.Drawing.Size(328, 43)
-        Me.lbltotalprice.TabIndex = 26
-        Me.lbltotalprice.Text = "Total Price"
-        Me.lbltotalprice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(199, 14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(128, 18)
+        Me.Label1.TabIndex = 14
+        Me.Label1.Text = "Load in Information"
         '
-        'Label4
+        'PictureBox1
         '
-        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(17, 145)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(170, 43)
-        Me.Label4.TabIndex = 25
-        Me.Label4.Text = "Total Price:"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PictureBox1.Location = New System.Drawing.Point(1, 6)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(536, 33)
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.txtqty)
-        Me.GroupBox3.Location = New System.Drawing.Point(13, 388)
+        Me.GroupBox3.Location = New System.Drawing.Point(13, 417)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(537, 70)
         Me.GroupBox3.TabIndex = 27
@@ -277,22 +310,22 @@ Partial Class frmloadin
         Me.txtqty.Enabled = False
         Me.txtqty.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtqty.Location = New System.Drawing.Point(129, 22)
-        Me.txtqty.MaxLength = 3
+        Me.txtqty.MaxLength = 5
         Me.txtqty.Name = "txtqty"
         Me.txtqty.Size = New System.Drawing.Size(145, 33)
-        Me.txtqty.TabIndex = 28
-        Me.txtqty.Text = "12"
+        Me.txtqty.TabIndex = 2
         '
         'txtcode
         '
         Me.txtcode.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.txtcode.Enabled = False
         Me.txtcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcode.ForeColor = System.Drawing.Color.White
-        Me.txtcode.Location = New System.Drawing.Point(12, 507)
+        Me.txtcode.Location = New System.Drawing.Point(14, 534)
         Me.txtcode.Name = "txtcode"
         Me.txtcode.ShortcutsEnabled = False
         Me.txtcode.Size = New System.Drawing.Size(538, 47)
-        Me.txtcode.TabIndex = 28
+        Me.txtcode.TabIndex = 1
         Me.txtcode.WordWrap = False
         '
         'StatusStrip1
@@ -300,7 +333,7 @@ Partial Class frmloadin
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.StatusStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblstatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 582)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 610)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1102, 22)
         Me.StatusStrip1.SizingGrip = False
@@ -316,14 +349,14 @@ Partial Class frmloadin
         '
         'lvproductsinfo
         '
-        Me.lvproductsinfo.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader4, Me.ColumnHeader3, Me.ColumnHeader5})
+        Me.lvproductsinfo.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader4, Me.ColumnHeader3})
         Me.lvproductsinfo.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvproductsinfo.FullRowSelect = True
         Me.lvproductsinfo.GridLines = True
         Me.lvproductsinfo.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lvproductsinfo.Location = New System.Drawing.Point(565, 18)
         Me.lvproductsinfo.Name = "lvproductsinfo"
-        Me.lvproductsinfo.Size = New System.Drawing.Size(525, 440)
+        Me.lvproductsinfo.Size = New System.Drawing.Size(525, 469)
         Me.lvproductsinfo.TabIndex = 30
         Me.lvproductsinfo.UseCompatibleStateImageBehavior = False
         Me.lvproductsinfo.View = System.Windows.Forms.View.Details
@@ -340,26 +373,21 @@ Partial Class frmloadin
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "Price"
-        Me.ColumnHeader4.Width = 100
+        Me.ColumnHeader4.Text = "QTY"
+        Me.ColumnHeader4.Width = 110
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "QTY"
-        Me.ColumnHeader3.Width = 59
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Total Price"
-        Me.ColumnHeader5.Width = 110
+        Me.ColumnHeader3.Text = "Total Price"
+        Me.ColumnHeader3.Width = 120
         '
         'btncancel
         '
         Me.btncancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancel.Location = New System.Drawing.Point(456, 464)
+        Me.btncancel.Location = New System.Drawing.Point(456, 495)
         Me.btncancel.Name = "btncancel"
         Me.btncancel.Size = New System.Drawing.Size(94, 33)
-        Me.btncancel.TabIndex = 32
+        Me.btncancel.TabIndex = 4
         Me.btncancel.Text = "&Cancel"
         Me.btncancel.UseVisualStyleBackColor = True
         '
@@ -367,17 +395,17 @@ Partial Class frmloadin
         '
         Me.btnadd.Enabled = False
         Me.btnadd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnadd.Location = New System.Drawing.Point(12, 464)
+        Me.btnadd.Location = New System.Drawing.Point(12, 495)
         Me.btnadd.Name = "btnadd"
         Me.btnadd.Size = New System.Drawing.Size(93, 33)
-        Me.btnadd.TabIndex = 31
+        Me.btnadd.TabIndex = 3
         Me.btnadd.Text = "Add"
         Me.btnadd.UseVisualStyleBackColor = True
         '
         'lblsalesman
         '
         Me.lblsalesman.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblsalesman.Location = New System.Drawing.Point(654, 478)
+        Me.lblsalesman.Location = New System.Drawing.Point(656, 502)
         Me.lblsalesman.Name = "lblsalesman"
         Me.lblsalesman.Size = New System.Drawing.Size(74, 15)
         Me.lblsalesman.TabIndex = 34
@@ -387,35 +415,35 @@ Partial Class frmloadin
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(573, 478)
+        Me.Label7.Location = New System.Drawing.Point(575, 502)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(75, 19)
         Me.Label7.TabIndex = 33
         Me.Label7.Text = "Salesman:"
         '
-        'Label8
+        'label13
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(573, 507)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(177, 19)
-        Me.Label8.TabIndex = 35
-        Me.Label8.Text = "Total Number of Products:"
+        Me.label13.AutoSize = True
+        Me.label13.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label13.Location = New System.Drawing.Point(575, 531)
+        Me.label13.Name = "label13"
+        Me.label13.Size = New System.Drawing.Size(177, 19)
+        Me.label13.TabIndex = 35
+        Me.label13.Text = "Total Number of Products:"
         '
-        'lbltnproduct
+        'lbltotalNumberOfProducts
         '
-        Me.lbltnproduct.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltnproduct.Location = New System.Drawing.Point(758, 507)
-        Me.lbltnproduct.Name = "lbltnproduct"
-        Me.lbltnproduct.Size = New System.Drawing.Size(74, 15)
-        Me.lbltnproduct.TabIndex = 36
-        Me.lbltnproduct.Text = "#"
+        Me.lbltotalNumberOfProducts.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltotalNumberOfProducts.Location = New System.Drawing.Point(760, 531)
+        Me.lbltotalNumberOfProducts.Name = "lbltotalNumberOfProducts"
+        Me.lbltotalNumberOfProducts.Size = New System.Drawing.Size(74, 15)
+        Me.lbltotalNumberOfProducts.TabIndex = 36
+        Me.lbltotalNumberOfProducts.Text = "#"
         '
         'lbltotalamount
         '
         Me.lbltotalamount.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotalamount.Location = New System.Drawing.Point(678, 535)
+        Me.lbltotalamount.Location = New System.Drawing.Point(680, 559)
         Me.lbltotalamount.Name = "lbltotalamount"
         Me.lbltotalamount.Size = New System.Drawing.Size(74, 15)
         Me.lbltotalamount.TabIndex = 38
@@ -425,32 +453,69 @@ Partial Class frmloadin
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(573, 535)
+        Me.Label12.Location = New System.Drawing.Point(575, 559)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(99, 19)
         Me.Label12.TabIndex = 37
         Me.Label12.Text = "Total Amount:"
         '
+        'btnvalidate
+        '
+        Me.btnvalidate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnvalidate.Location = New System.Drawing.Point(12, 495)
+        Me.btnvalidate.Name = "btnvalidate"
+        Me.btnvalidate.Size = New System.Drawing.Size(93, 33)
+        Me.btnvalidate.TabIndex = 39
+        Me.btnvalidate.Text = "Validate"
+        Me.btnvalidate.UseVisualStyleBackColor = True
+        '
+        'psave
+        '
+        Me.psave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.psave.Image = CType(resources.GetObject("psave.Image"), System.Drawing.Image)
+        Me.psave.Location = New System.Drawing.Point(983, 493)
+        Me.psave.Name = "psave"
+        Me.psave.Size = New System.Drawing.Size(107, 107)
+        Me.psave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.psave.TabIndex = 40
+        Me.psave.TabStop = False
+        '
+        'splash
+        '
+        Me.splash.BackColor = System.Drawing.SystemColors.Control
+        Me.splash.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.splash.Location = New System.Drawing.Point(387, 236)
+        Me.splash.Name = "splash"
+        Me.splash.Size = New System.Drawing.Size(365, 96)
+        Me.splash.TabIndex = 41
+        Me.splash.Text = "Please wait...."
+        Me.splash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.splash.Visible = False
+        '
         'frmloadin
         '
+        Me.AcceptButton = Me.btnvalidate
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ClientSize = New System.Drawing.Size(1102, 604)
+        Me.ClientSize = New System.Drawing.Size(1102, 632)
+        Me.Controls.Add(Me.splash)
+        Me.Controls.Add(Me.psave)
         Me.Controls.Add(Me.lbltotalamount)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.lbltnproduct)
-        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.lbltotalNumberOfProducts)
+        Me.Controls.Add(Me.label13)
         Me.Controls.Add(Me.lblsalesman)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btncancel)
-        Me.Controls.Add(Me.btnadd)
         Me.Controls.Add(Me.lvproductsinfo)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.txtcode)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.btnadd)
+        Me.Controls.Add(Me.btnvalidate)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -467,6 +532,7 @@ Partial Class frmloadin
         Me.GroupBox3.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.psave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -498,13 +564,17 @@ Partial Class frmloadin
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents btncancel As Button
     Friend WithEvents btnadd As Button
     Friend WithEvents lblsalesman As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents lbltnproduct As Label
+    Friend WithEvents label13 As Label
+    Friend WithEvents lbltotalNumberOfProducts As Label
     Friend WithEvents lbltotalamount As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents lblstocks As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents btnvalidate As Button
+    Friend WithEvents psave As PictureBox
+    Friend WithEvents splash As Label
 End Class
